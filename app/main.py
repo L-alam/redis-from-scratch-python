@@ -11,7 +11,9 @@ def main():
     # TCP server that listens on port 6379. Just like redis
     server_socket = socket.create_server(("localhost", 6379), reuse_port=True)
     connection, client_address = server_socket.accept()
-    connection.send(bytes("+PONG\r\n", "utf-8"))
+    while True:
+        client = connection.recv(256)
+        connection.send(bytes("+PONG\r\n", "utf-8"))
 
 
     
