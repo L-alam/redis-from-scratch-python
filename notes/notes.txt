@@ -1,0 +1,19 @@
+TCP (Transmission Control Protocol)
+
+Redis PING command:
+    - used to check whether a Redis server is alive and responding
+    - RESP: custom format between redis client and servers
+
+python socket library
+
+socket.create()
+connection, client_address = server_socket.accept()
+    - connection ==> new socket object usable to send and receive data on the connection
+    - client_address ==> address bound to the socket on the other end of the connection
+client = connection.recv(256)
+connection.send(bytes("+PONG\r\n", "utf-8"))
+
+Asyncio:
+- There are three main types of awaitable objects: coroutines, Tasks, and Futures.
+- calling an async function does not execute the code, just creates a coroutine obj
+    - A coroutine has to be explicitly started
